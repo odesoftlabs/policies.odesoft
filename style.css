@@ -1,0 +1,219 @@
+/* 1. RESETEO GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    /* Un fondo gris claro muy limpio */
+    color: #333;
+}
+
+/* 2. BARRA SUPERIOR (HEADER) */
+.header-bar {
+    background-color: #ffffff;
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Sombra suave abajo */
+    z-index: 100;
+    /* Para que siempre esté por encima de todo */
+}
+
+/* logo odeoft */
+.logo-container {
+    margin-left: -1px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.logo-img {
+    width: auto;
+    height: 20px;
+    object-fit: contain;
+}
+
+/* Botones de iconos (Hamburguesa y X) */
+.icon-btn {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #5f6368;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background 0.2s;
+}
+
+.icon-btn:hover {
+    background-color: #f1f3f4;
+    /* Efecto sutil al pasar el mouse */
+}
+
+/* 3. MENÚ LATERAL (SIDEBAR) */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -270px;
+    /* ¡AQUÍ ESTÁ EL TRUCO! Lo movemos a la izquierda, fuera de la pantalla */
+    width: 270px;
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 200;
+    /* Más alto que el header para taparlo al salir */
+    padding: 20px;
+    transition: left 0.3s ease;
+    /* Hace que el menú se deslice suavemente */
+}
+
+/* Esta clase la activará JavaScript para MOSTRAR el menú */
+.sidebar.active {
+    left: 0;
+    /* Regresa a la pantalla */
+}
+
+.close-btn {
+    float: right;
+    /* Pone la X a la derecha dentro del menú */
+    margin-bottom: 20px;
+}
+
+/* Enlaces del menú */
+.menu-links {
+    list-style: none;
+    margin-top: 60px;
+}
+
+.menu-links li {
+    margin-bottom: 15px;
+}
+
+.menu-links a {
+    text-decoration: none;
+    color: #3c4043;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    /* Espacio entre el icono y el texto */
+    padding: 12px;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.menu-links a:hover {
+    background-color: #e8f0fe;
+    color: #1a73e8;
+    /* Se vuelve azul al pasar el mouse */
+}
+
+/* 4. CONTENIDO PRINCIPAL */
+.main-content {
+    margin-top: 100px;
+    /* Espacio para que no lo tape la barra de arriba */
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.welcome-box {
+    background-color: #ffffff;
+    max-width: 600px;
+    width: 100%;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.welcome-box h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #202124;
+}
+
+.welcome-box p {
+    color: #5f6368;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.cta-btn {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.cta-btn:hover {
+    background-color: #1557b0;
+}
+
+/* ==========================================================================
+   5. DISEÑO DE SECCIONES CONTINUAS (Estilo Base / Computadora)
+   ========================================================================== */
+
+/* Movimiento suave al saltar entre secciones */
+html {
+    scroll-behavior: smooth;
+}
+
+/* El contenedor principal ahora se alinea a la izquierda de la pantalla */
+.legal-container {
+    max-width: 1600px;
+    /* ¡Excelente! Ocupa muy bien las pantallas anchas */
+    width: 100%;
+    margin-left: 10px;
+    margin-bottom: 80px;
+}
+
+/* Cada sección es texto libre continuo hacia abajo */
+.legal-section {
+    margin-bottom: 50px;
+    text-align: left;
+    scroll-margin-top: 90px;
+    /* Evita que el header tape el título */
+}
+
+/* Títulos grandes en PC */
+.legal-section h2 {
+    font-size: 26px;
+    color: #3b3b3b;
+    margin-bottom: 15px;
+    font-weight: 600;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 8px;
+}
+
+/* Subtítulos internos en PC */
+.legal-section h3 {
+    font-size: 7px;
+    /* Proporcional al h2 de PC */
+    color: #202124;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Párrafos en PC */
+.legal-section p {
+    font-size: 16px;
+    color: #333333;
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
