@@ -57,17 +57,21 @@ body {
     background-color: #f1f3f4;
 }
 
-/* 3. MENÚ LATERAL (SIDEBAR) */
+/* ==========================================================================
+   3. MENÚ LATERAL (SIDEBAR FINO, LOGO INTEGRADO Y "X" ALINEADA)
+   ========================================================================== */
 .sidebar {
     position: fixed;
     top: 0;
-    left: -270px;
-    width: 190px;
+    /* Ajustado left y width al mismo tamaño (230px) para que abra perfecto */
+    left: -230px;
+    width: 200px;
     height: 100%;
     background-color: #ffffff;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
     z-index: 200;
-    padding: 20px;
+    padding: 15px;
+    /* Ajustamos padding para dar más espacio interno */
     transition: left 0.3s ease;
 }
 
@@ -75,36 +79,86 @@ body {
     left: 0;
 }
 
+/* NUEVO: Contenedor estricto para Logo y Equis juntos en horizontal */
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    /* Logo a la izquierda, X a la derecha */
+    align-items: center;
+    /* Centrado vertical matemático */
+    width: 100%;
+    height: 45px;
+    /* Altura congelada para evitar que la X se baje */
+    margin-bottom: 25px;
+    padding: 0 5px;
+}
+
+/* Caja del logo */
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+    max-width: 130px;
+    /* Frena los márgenes transparentes de la imagen */
+    overflow: hidden;
+}
+
+.sidebar-logo .logo-img {
+    width: 100%;
+    height: auto;
+    max-height: 20px;
+    object-fit: contain;
+    display: block;
+}
+
+/* CORRECCIÓN: Botón de cerrar la X reparado sin float */
 .close-btn {
-    float: right;
-    margin-bottom: 20px;
+    font-size: 16px !important;
+    padding: 0 !important;
+    display: flex !important;
+    /* Lo volvemos flexbox para clavar la X al centro */
+    align-items: center !important;
+    justify-content: center !important;
+    height: 32px !important;
+    /* Forzamos tamaño de botón circular perfecto */
+    width: 32px !important;
+    margin: 0 !important;
+    /* Quitamos márgenes viejos que lo tiraban al piso */
 }
 
 .menu-links {
     list-style: none;
-    margin-top: 60px;
+    margin-top: 10px;
+    /* Reducido porque la cabecera ya ocupa espacio */
 }
 
 .menu-links li {
-    margin-bottom: 15px;
+    margin-bottom: 8px;
+    /* Menor separación para que sea más estilizado */
 }
 
 .menu-links a {
     text-decoration: none;
     color: #3c4043;
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 14px;
+    /* Texto fino estilo Google */
+    font-weight: 400;
     display: flex;
     align-items: center;
-    gap: 15px;
-    padding: 12px;
-    border-radius: 8px;
-    transition: background 0.2s;
+    gap: 12px;
+    padding: 10px 14px 10px 22px;
+    border-radius: 0 20px 20px 0;
+    /* Bordes circulares tipo pestaña de Gmail */
+    margin-left: -15px;
+    /* Expande el sombreado hover hasta el borde izquierdo */
+    width: calc(100% + 15px);
+    transition: background 0.2s, color 0.2s;
 }
 
 .menu-links a:hover {
-    background-color: #e8f0fe;
+    background-color: #f1f3f4;
+    /* Fondo gris suave */
     color: #1a73e8;
+    /* Letras pasan al azul corporativo */
 }
 
 /* 4. CONTENIDO PRINCIPAL */
@@ -118,13 +172,13 @@ body {
 /* ==========================================================================
    5. DISEÑO DE SECCIONES CONTINUAS (Estilo Base / Computadora)
    ========================================================================== */
-
 html {
     scroll-behavior: smooth;
 }
 
 .legal-container {
     max-width: 1600px;
+    /* Ajustado a 900px para evitar líneas infinitas en PC (Lectura óptima) */
     width: 100%;
     margin-left: 10px;
     margin-bottom: 80px;
