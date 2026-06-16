@@ -1,14 +1,24 @@
-// 1. Guardamos en "variables" los tres elementos que necesitamos controlar
-const menuToggle = document.getElementById('menu-toggle'); // Botón hamburguesa
-const menuClose = document.getElementById('menu-close');   // Botón X
-const sidebar = document.getElementById('sidebar');         // El menú lateral
+// 1. Guardamos en "variables" los elementos que necesitamos controlar
+const menuToggle = document.getElementById('menu-toggle');
+const menuClose = document.getElementById('menu-close');
+const sidebar = document.getElementById('sidebar');
 
-// 2. Cuando el usuario haga clic en la hamburguesa...
+// Seleccionamos todos los enlaces que están dentro del menú lateral
+const menuLinks = document.querySelectorAll('.menu-links a');
+
+// 2. Cuando el usuario haga clic en la hamburguesa (Abrir)
 menuToggle.addEventListener('click', () => {
-    sidebar.classList.add('active'); // Añadimos la clase para que se deslice hacia adentro
+    sidebar.classList.add('active');
 });
 
-// 3. Cuando el usuario haga clic en la X...
+// 3. Cuando el usuario haga clic en la X (Cerrar)
 menuClose.addEventListener('click', () => {
-    sidebar.classList.remove('active'); // Quitamos la clase para que se vuelva a esconder
+    sidebar.classList.remove('active');
+});
+
+// 4. NUEVA FUNCIÓN: Cerrar el menú automáticamente al tocar cualquier enlace
+menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        sidebar.classList.remove('active');
+    });
 });
