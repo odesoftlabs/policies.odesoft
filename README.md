@@ -1,1 +1,1 @@
-# chatgtc_discord
+# Odesoft Labs - Legal
