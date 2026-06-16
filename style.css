@@ -203,7 +203,7 @@ html {
 
 /* Subtítulos internos en PC */
 .legal-section h3 {
-    font-size: 7px;
+    font-size: 15px;
     /* Proporcional al h2 de PC */
     color: #202124;
     margin-top: 20px;
