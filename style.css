@@ -253,3 +253,12 @@ html {
         line-height: 1.6;
     }
 }
+
+footer {
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 14px;
+    color: #666666;
+    /* Un gris sutil para que no resalte más que el contenido */
+}
