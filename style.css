@@ -237,6 +237,8 @@ html {
 @media (max-width: 768px) {
     .legal-container {
         margin-left: 0;
+        margin-bottom: -20px;
+        /* Ajustado para eliminar el espacio blanco masivo */
     }
 
     .legal-section h2 {
@@ -256,9 +258,20 @@ html {
 
 footer {
     width: 100%;
-    padding: 20px 0;
+    padding: 10px 0;
+    /* Reducido de 20px a 10px para mejor estética en móviles */
     text-align: center;
     font-size: 14px;
     color: #666666;
     /* Un gris sutil para que no resalte más que el contenido */
+}
+
+footer p {
+    margin: 0 !important;
+}
+
+main p:last-of-type,
+section p:last-of-type,
+div p:last-of-type {
+    margin-bottom: 10px !important;
 }
